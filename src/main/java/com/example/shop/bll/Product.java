@@ -15,17 +15,17 @@ public class Product {
     private String name;
     @Column(name = "price")
     private Float price;
-    @Column(name = "picByte", length = 1000)
-    private byte[] picByte;
+    @Column(name = "picPath", length = 1000)
+    private String picPath;
 
     public Product() {
     }
 
-    public Product(Long id, ProductType type, String name, Float price, byte[] picByte) {
+    public Product(Long id, ProductType type, String name, Float price, String picPath) {
         this.type = type;
         this.name = name;
         this.price = price;
-        this.picByte = picByte;
+        this.picPath = picPath;
     }
 
     public Long getId() {
@@ -60,12 +60,12 @@ public class Product {
         this.price = price;
     }
 
-    public byte[] getPicByte() {
-        return picByte;
+    public String getPicPath() {
+        return picPath;
     }
 
-    public void setPicByte(byte[] picByte) {
-        this.picByte = picByte;
+    public void setPicPath(String picPath) {
+        this.picPath = picPath;
     }
 
 }

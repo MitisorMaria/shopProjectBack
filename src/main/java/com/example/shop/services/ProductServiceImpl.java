@@ -33,7 +33,7 @@ public class ProductServiceImpl implements ProductService{
 
 
     public void updateProduct (Product product){
-        productRepository.updateProductById(product.getName(), product.getPrice(), product.getPicByte(), product.getId());
+        productRepository.updateProductById(product.getName(), product.getPrice(), product.getPicPath(), product.getId());
     }
 
     public void deleteProductById (Long id){
