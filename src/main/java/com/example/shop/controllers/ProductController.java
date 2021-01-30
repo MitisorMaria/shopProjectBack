@@ -8,12 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.util.List;
-import java.util.zip.DataFormatException;
-import java.util.zip.Deflater;
-import java.util.zip.Inflater;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -23,14 +18,14 @@ public class ProductController {
     private ProductService productService;
 
     @PostMapping("products")
-    public ResponseEntity<?> addProduct(@RequestBody Product product) throws IOException {
+    public ResponseEntity<?> addProduct(@RequestBody Product product) {
         productService.addProduct(product);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
 
     @GetMapping("/{type}")
-    public List<Product> getProductsByType(@PathVariable("type") ProductType type) throws IOException {
+    public List<Product> getProductsByType(@PathVariable("type") ProductType type) {
         List<Product> products = productService.getAllByType(type);
         return products;
     }
