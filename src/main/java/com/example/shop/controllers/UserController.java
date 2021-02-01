@@ -29,6 +29,13 @@ public class UserController {
         return toReturn;
     }
 
+    @GetMapping("userId")
+    @ResponseBody
+    public User getUserById(@RequestParam long id) {
+        User u = userService.getUserById(id);
+        return u;
+    }
+
     @PutMapping("users")
     public ResponseEntity<?> updateUser(@RequestBody User user) {
         userService.updateUser(user);

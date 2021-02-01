@@ -29,7 +29,11 @@ public class UserServiceImpl implements UserService{
         return userRepository.findAll(example).get(0);
     }
 
-    public void updateUser (User user) {
+    public User getUserById(long id) {
+        return userRepository.findById(id).get();
+    }
 
+    public void updateUser (User user) {
+        userRepository.save(user);
     }
 }
