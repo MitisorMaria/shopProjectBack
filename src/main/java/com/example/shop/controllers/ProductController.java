@@ -29,4 +29,10 @@ public class ProductController {
         List<Product> products = productService.getAllByType(type);
         return products;
     }
+
+    @GetMapping("products")
+    public List<Product> getProductsByTypeAndIds(@RequestParam ProductType type, @RequestParam String idString) {
+        List<Product> products = productService.getProductsByTypeAndIds(type, idString);
+        return products;
+    }
 }
